@@ -1,9 +1,15 @@
-var http = require("http");
+const express = require("express");
+const app = express();
 
-//create a server object:
-http
-  .createServer(function (req, res) {
-    res.write("Hello from CodeSandbox!"); //write a response to the client
-    res.end(); //end the response
-  })
-  .listen(8080); //the server object listens on port 8080
+const PORT = 3333;
+
+app.get("/", (req, res) => {
+  res.send("Hello from Express");
+});
+
+app.get("/sobre", (req, res) => {
+  res.send("Conheça nossa loja");
+});
+app.listen(PORT, () => {
+  console.log("Listen at port " + PORT);
+});
