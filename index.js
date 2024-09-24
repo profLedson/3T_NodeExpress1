@@ -12,7 +12,7 @@ app.get("/sobre", (req, res) => {
 });
 
 app.use((req, res) => {
-  res.status(500).redirect("/");
+  res.status(500).sendFile(__dirname + "/src/views/notFound.html");
 });
 
 app.listen(PORT, () => {
